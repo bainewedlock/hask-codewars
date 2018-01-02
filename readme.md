@@ -1,3 +1,9 @@
+## Autorun tests
+```
+./autorefresh-test.sh
+```
+
+
 ## Run tests
 ```
 cabal test
