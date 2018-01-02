@@ -1,7 +1,9 @@
 module Main where
 
-import System.Exit (exitFailure)
+import Test.Hspec
 
-main = do
-  putStrLn "====================================> This test always fails!"
-  exitFailure
+main :: IO ()
+main = hspec $ do
+  describe "absolute" $ do
+    it "test with Hspec" $
+      "foo" `shouldBe` "bar"

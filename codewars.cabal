@@ -26,4 +26,7 @@ executable codewars
 Test-Suite test-codewars
   type: exitcode-stdio-1.0
   main-is: test-codewars.hs
+  ghc-options: -Wall -Werror
   build-depends: base
+               , hspec
+               , QuickCheck
