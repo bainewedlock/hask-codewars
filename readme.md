@@ -31,4 +31,7 @@ cabal install
 - :r              reloads last file
 - :set +s         measures time of all function calls
 - :{              start multiline input
+- ;               separate multiple commands
 - :browse         shows type signatures from current module
+- :info <id>      info über Klasse oder Objekt
+
