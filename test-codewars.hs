@@ -8,4 +8,3 @@ main = hspec $
     it "test with Hspec" $
       "foo" `shouldBe` "bar"
 
-

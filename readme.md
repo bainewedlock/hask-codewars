@@ -6,9 +6,11 @@ cabal update
 cabal install QuickCheck hspec
 ```
 
-## Autorun tests
+## Coding
 ```
-./autorefresh-test.sh
+ghci
+:load test-codewars.hs
+:main
 ```
 
 
@@ -22,3 +24,11 @@ cabal test
 ```
 cabal install
 ```
+
+
+## GHCI Tips
+- :l              shortcut for load
+- :r              reloads last file
+- :set +s         measures time of all function calls
+- :{              start multiline input
+- :browse         shows type signatures from current module
