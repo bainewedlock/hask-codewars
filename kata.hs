@@ -3,9 +3,13 @@ module Main where
 import Test.Hspec
 
 remove :: String -> String
-remove s = error "Implement me!!"
+remove s = do
+  let a = removeExclamationMarks s
+  appendExclamationMarks a (length s - length a)
 
+removeExclamationMarks = filter (/= '!')
 
+appendExclamationMarks s n = s ++ (replicate n '!')
 
 main :: IO ()
 main = hspec $
