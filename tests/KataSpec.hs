@@ -1,9 +1,9 @@
 module KataSpec (spec) where
 
 import Test.Hspec
-import Test.Hspec.QuickCheck
 
--- import Text.Printf (printf)
+
+import Text.Printf (printf)
 import Data.List;
 import Data.List.Split;
 
@@ -20,19 +20,17 @@ compose s1 s2 = do
   intercalate "\n" $ map convert_at_index [0..u]
 
 
--- testCompose :: String -> String -> String -> Spec
--- testCompose s1 s2 s =
---   it (printf "should return compose for s1: %s \n  s2 %s " (show s1) (show s2)) $
---     compose s1 s2 `shouldBe` s
+testCompose :: String -> String -> String -> Spec
+testCompose s1 s2 s =
+  it (printf "should return compose for s1: %s \n  s2 %s " (show s1) (show s2)) $
+    compose s1 s2 `shouldBe` s
 
 spec :: Spec
 spec = do
   describe "compose" $ do
-    prop "keine ahnung" $ do
-      "hello" == "world"
-    -- testCompose "byGt\nhTts\nRTFF\nCnnI" "jIRl\nViBu\nrWOb\nNkTB"
-    --   "bNkTB\nhTrWO\nRTFVi\nCnnIj"
-    -- testCompose "HXxA\nTGBf\nIPhg\nuUMD" "Hcbj\nqteH\nGbMJ\ngYPW"
-    --   "HgYPW\nTGGbM\nIPhqt\nuUMDH"
-    -- testCompose "tSrJ\nOONy\nsqPF\nxMkB" "hLqw\nEZuh\nmYFl\nzlYf"
-    --   "tzlYf\nOOmYF\nsqPEZ\nxMkBh"
+    testCompose "byGt\nhTts\nRTFF\nCnnI" "jIRl\nViBu\nrWOb\nNkTB"
+      "bNkTB\nhTrWO\nRTFVi\nCnnIj"
+    testCompose "HXxA\nTGBf\nIPhg\nuUMD" "Hcbj\nqteH\nGbMJ\ngYPW"
+      "HgYPW\nTGGbM\nIPhqt\nuUMDH"
+    testCompose "tSrJ\nOONy\nsqPF\nxMkB" "hLqw\nEZuh\nmYFl\nzlYf"
+      "tzlYf\nOOmYF\nsqPEZ\nxMkBh"
