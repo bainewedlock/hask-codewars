@@ -1,37 +1,17 @@
-## First time setup
+## first time setup
 ```
-sudo apt-get install inotify-tools
-sudo apt-get install haskell-platform
 cabal update
-cabal install QuickCheck hspec
-```
-
-## Coding
-```
-ghci
-:load test-codewars.hs
-:main
-```
-
-
-## Run tests
-```
-cabal test
-```
-
-
-## Compile App
-```
+cabal sandbox init
 cabal install
 ```
 
-
-## GHCI Tips
-- :l              shortcut for load
-- :r              reloads last file
-- :set +s         measures time of all function calls
-- :{              start multiline input
-- ;               separate multiple commands
-- :browse         shows type signatures from current module
-- :info <id>      info über Klasse oder Objekt
+### coding
+```
+cabal exec ghci
+:load kata.hs
+:main
+(edit code)
+:reload
+:main
+```
 
