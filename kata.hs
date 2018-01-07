@@ -1,23 +1,20 @@
-module Main where
+module Kata where
 
 import Test.Hspec
-
-remove :: String -> String
-remove s = do
-  let a = removeExclamationMarks s
-  appendExclamationMarks a (length s - length a)
-
-removeExclamationMarks = filter (/= '!')
-
-appendExclamationMarks s n = s ++ (replicate n '!')
+import Test.QuickCheck
 
 main :: IO ()
 main = hspec $
   describe "Example Tests" $
-    it "should work with example tests" $ do
-      remove "Hi!"          `shouldBe` "Hi!"
-      remove "Hi! Hi!"      `shouldBe` "Hi Hi!!"
-      remove "Hi! Hi! Hi!"  `shouldBe` "Hi Hi Hi!!!"
-      remove "Hi! !Hi Hi!"  `shouldBe` "Hi Hi Hi!!!"
-      remove "Hi! Hi!! Hi!" `shouldBe` "Hi Hi Hi!!!!"
+    it "should work with example tests" $ do 
+      landPerimeter ["OXOOOX", "OXOXOO", "XXOOOX", "OXXXOO", "OOXOOX", "OXOOOO", "OOXOOX", "OOXOOO", "OXOOOO", "OXOOXX"] `shouldBe` "Total land perimeter: 60"
+      landPerimeter ["OXOOO", "OOXXX", "OXXOO", "XOOOO", "XOOOO", "XXXOO", "XOXOO", "OOOXO", "OXOOX", "XOOOO", "OOOXO"] `shouldBe` "Total land perimeter: 52"
+      landPerimeter ["XXXXXOOO", "OOXOOOOO", "OOOOOOXO", "XXXOOOXO", "OXOXXOOX"] `shouldBe` "Total land perimeter: 40"
+      landPerimeter ["XOOOXOO", "OXOOOOO", "XOXOXOO", "OXOXXOO", "OOOOOXX", "OOOXOXX", "XXXXOXO"] `shouldBe` "Total land perimeter: 54"
+      landPerimeter ["OOOOXO", "XOXOOX", "XXOXOX", "XOXOOO", "OOOOOO", "OOOXOO", "OOXXOO"] `shouldBe` "Total land perimeter: 40"
+
+landPerimeter :: [String] -> String
+landPerimeter arr = undefined
+
+
 
